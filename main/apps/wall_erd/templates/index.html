@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Wall ERD</title>
+</head>
+
+<body>
+    <form action="/messages" method="post">
+        {% csrf_token %} Message:
+        <input type="text" name="message">
+        <input type="submit">
+    </form>
+    {% for i in messages %}
+    <div>
+        Message: {{i.message}}
+        <form action="/messages/{{i.id}}" method="post">
+            {% csrf_token %} Comment:
+            <input type="text" name="comment">
+            <input type="submit">
+        </form>
+        {% for j in comments %} {% if j.message_id.id == i.id %}
+        <div>
+            Comment: {{j.comment}}
+        </div>
+        {% endif %} {% endfor %}
+    </div>
+    {% endfor %}
+</body>
+
+</html>
