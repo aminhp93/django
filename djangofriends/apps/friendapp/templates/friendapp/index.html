@@ -8,9 +8,11 @@
 
 <body>
     <h1> I've got some friends? </h1> {% for i in users %}
-    <p>
-        {{i.first_name}} {{i.last_name}}
-    </p>
+    <div>
+        {% if i.last_name == "Daniel" && i.id == 1 %}
+        <div>{{i.user.first_name}} {{i.user.last_name}}</div>
+        {% endif %}
+    </div>
     {% endfor %}
 </body>
 

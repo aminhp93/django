@@ -1,7 +1,7 @@
-"""main URL Configuration
+"""Emails URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.10/topics/http/urls/
+    https://docs.djangoproject.com/en/1.9/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,14 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
-from django.contrib import admin
+# from django.contrib import admin
 
 urlpatterns = [
-    # url(r'^admin/', admin.site.urls),
-    # url(r'^', include('apps.first_app.urls'))
-    # url(r'^', include('apps.second_app.urls'))
-    # url(r'^', include('apps.time_display.urls'))
-    # url(r'^', include('apps.random_word.urls'))
-    # url(r'^', include('apps.survey_form.urls'))
-    url(r'^', include('apps.wall_erd.urls'))
+    url(r'^', include('apps.login_registration.urls')),
 ]
