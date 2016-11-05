@@ -32,6 +32,8 @@ def success(request):
 
 def print_messages(request, message_list):
 	for message in message_list:
+		print("*" * 50)
+		print(messages, request, messages.INFO, message)
 		messages.add_message(request, messages.INFO, message)
 
 def log_user_in(request, user):
